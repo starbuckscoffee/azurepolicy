@@ -1,0 +1,181 @@
+{
+ "properties": {
+  "displayName": "Private Link and DNS integration at scale Blob",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "Reference:\nhttps://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/private-link-and-dns-integration-at-scale#first-deployifnotexists-policy---matching-on-groupid-only",
+  "metadata": {
+   "category": "custom policy",
+   "createdBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "createdOn": "2022-12-21T07:36:55.8832365Z",
+   "updatedBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "updatedOn": "2022-12-21T21:40:16.1919381Z"
+  },
+  "parameters": {
+   "privateDnsZoneId": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId",
+     "description": "The resource id of the private dns zone",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   },
+   "allowedGroupIds": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "allowedGroupIds",
+     "description": "private endpint PaaS services"
+    },
+    "defaultValue": [
+     "registry",
+     "configurationStores",
+     "Webhook",
+     "DSCAndHybridWorker",
+     "SQL",
+     "MongoDB",
+     "Cassandra",
+     "Gremlin",
+     "Table",
+     "batchAccount",
+     "nodeManagement",
+     "redisCache",
+     "redisEnterprise",
+     "account",
+     "managed disk",
+     "management",
+     "dataFactory",
+     "cluster",
+     "mariadbServer",
+     "mysqlServer",
+     "postgresqlServer",
+     "iotDps",
+     "iotHub",
+     "IoTApps",
+     "API",
+     "domain",
+     "topic",
+     "namespace",
+     "cluster",
+     "fhir",
+     "HSM",
+     "vault",
+     "amlworkspace",
+     "project",
+     "application gateway",
+     "Power BI",
+     "account",
+     "portal",
+     "namespace",
+     "searchService",
+     "namespace",
+     "signalr",
+     "webpubsub",
+     "sqlServer",
+     "blob",
+     "blob_secondary",
+     "table",
+     "table_secondary",
+     "queue",
+     "queue_secondary",
+     "file",
+     "file_secondary",
+     "web",
+     "web_secondary",
+     "dfs",
+     "dfs_secondary",
+     "File Sync Service",
+     "Sql",
+     "SqlOnDemand",
+     "Dev",
+     "hosting environment",
+     "sites",
+     "staticSites",
+     "keydelivery",
+     "liveevent",
+     "streamingendpoint"
+    ]
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Network/privateEndpoints"
+     },
+     {
+      "count": {
+       "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+       "where": {
+        "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+        "in": "[ parameters('allowedGroupIds')]"
+       }
+      },
+      "greaterOrEquals": 1
+     }
+    ]
+   },
+   "then": {
+    "effect": "deployIfNotExists",
+    "details": {
+     "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+     "roleDefinitionIds": [
+      "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+     ],
+     "deployment": {
+      "properties": {
+       "mode": "incremental",
+       "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+         "privateDnsZoneId": {
+          "type": "string"
+         },
+         "privateEndpointName": {
+          "type": "string"
+         },
+         "location": {
+          "type": "string"
+         }
+        },
+        "resources": [
+         {
+          "name": "[concat(parameters('privateEndpointName'), '/deployedByPolicy')]",
+          "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+          "apiVersion": "2020-03-01",
+          "location": "[parameters('location')]",
+          "properties": {
+           "privateDnsZoneConfigs": [
+            {
+             "name": "storageBlob-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId')]"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "parameters": {
+        "privateDnsZoneId": {
+         "value": "[parameters('privateDnsZoneId')]"
+        },
+        "privateEndpointName": {
+         "value": "[field('name')]"
+        },
+        "location": {
+         "value": "[field('location')]"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/fb070597-c72c-47ed-941e-112e30139559",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "fb070597-c72c-47ed-941e-112e30139559"
+}
