@@ -10,7 +10,9 @@
 - Private Link and DNS integration at scale Azure Data Explorer
 - Private Link and DNS integration at scale IoT Central
 - Private Link and DNS integration at scale Azure Digital Twin
-
+- Private Link and DNS integration at scale CosmosDB    (NoSQL, MongoDB, Cassandra, Gremlin, Table)
+- Private Link and DNS integration at scale Key Vaults
+- 
 Not Included in Initiative
 - Private Link and DNS integration at scale AKS
 - Private Link and DNS integration at scale Redis Cache Enterprise
