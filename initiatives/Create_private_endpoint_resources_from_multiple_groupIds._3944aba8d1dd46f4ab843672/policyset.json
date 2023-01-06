@@ -5,23 +5,14 @@
   "description": "Group of policies that assign A records from groupId in multiple private endpoints \n[Policy Category]  PrivateDnsZoneGroupId",
   "metadata": {
    "category": "PrivateDnsZoneGroupId",
-   "version": "0.2",
+   "version": "0.4",
    "parameterScopes": {
-    "privateDnsZoneId : DINE create private endpoint resource(A records) from groupId(blob)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A record) from groupId(redisCache)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) from groupId(registry)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) from groupId(iotHub)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) from groupId(iotDps)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) for IoT Central from groupId(IoTApps)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) for ADX from groupId(cluster)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) for ADT from groupId(API)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) for Event Grid  from groupId(topic)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
-    "privateDnsZoneId : DINE create private endpoint resource(A records) for Event Hubs from groupId(namespace)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55"
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Key Vault from groupId(vault)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55"
    },
    "createdBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
    "createdOn": "2023-01-06T09:37:32.6578218Z",
-   "updatedBy": null,
-   "updatedOn": null
+   "updatedBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "updatedOn": "2023-01-06T11:16:55.3162111Z"
   },
   "parameters": {
    "IoTDPS": {
@@ -113,6 +104,60 @@
      "strongType": "Microsoft.Network/privateDnsZones"
     },
     "defaultValue": "privatelink.digitaltwins.azure.net"
+   },
+   "CosmosDbNoSQL": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB NoSQL",
+     "description": "private DNS zone for cosmosDB (NoSQL) \ngroupId == SQL",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.documents.azure.com"
+   },
+   "CosmosDbMongo": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB MongoDB",
+     "description": "private DNS zone for CosmosDB (MongoDB)\ngroupId == MongoDB",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.mongo.cosmos.azure.com"
+   },
+   "CosmosDbCassandra": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Cassandra",
+     "description": "private DNS zone for Cosmos DB Cassandra",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.cassandra.cosmos.azure.com"
+   },
+   "CosmosDbGremlin": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Gremlin",
+     "description": "private DNS zone for Cosmos DB Gremlin",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.gremlin.cosmos.azure.com"
+   },
+   "CosmosDbTable": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Table",
+     "description": "private DNS zone for Cosmos DB Table",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.cosmos.azure.com"
+   },
+   "KeyVault": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Key Vault",
+     "description": "private DNS zone for Azure Key Vaults",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.vaultcore.azure.net"
    }
   },
   "policyDefinitions": [
@@ -212,6 +257,66 @@
     "parameters": {
      "privateDnsZoneId": {
       "value": "[parameters('EventHub')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB NoSQL from groupId(Sql)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/6fb20e56-71bc-4b04-ab75-b36dbefeda5b",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbNoSQL')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Mongo) from groupId(MongoDB)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c20",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbMongo')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Cassandra) from groupId(Cassandra)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c2b",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbCassandra')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Gremlin) from groupId(Gremlin)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c38",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbGremlin')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Table) from groupId(Table)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c43",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbTable')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Key Vault from groupId(vault)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b5425fa3-2f79-4d68-baca-ca90def543dc",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('KeyVault')]"
      }
     },
     "groupNames": []
