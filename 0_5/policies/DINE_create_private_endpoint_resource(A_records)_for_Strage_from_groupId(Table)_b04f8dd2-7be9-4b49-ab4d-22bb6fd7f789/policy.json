@@ -100,7 +100,6 @@
    }
   }
  },
- "id": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789",
- "type": "Microsoft.Authorization/policyDefinitions",
+  "type": "Microsoft.Authorization/policyDefinitions",
  "name": "b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789"
 }
