@@ -422,7 +422,5 @@
    }
   ],
   "policyDefinitionGroups": []
- },
-  "type": "Microsoft.Authorization/policySetDefinitions",
- "name": "3944aba8d1dd46f4ab843672"
+ }
 }

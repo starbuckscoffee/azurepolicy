@@ -99,7 +99,5 @@
     }
    }
   }
- },
-  "type": "Microsoft.Authorization/policyDefinitions",
- "name": "a4d2a3b0-edd0-4538-afa8-2065b2618c2b"
+ }
 }
