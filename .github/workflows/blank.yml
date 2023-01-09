@@ -3,11 +3,18 @@ on: [push]
 name: AzureLoginFlow
 
 jobs:
-  build-and-deploy:
+  apply-azure-policy:
     runs-on: ubuntu-latest
     steps:
-      - name: Log in with Azure
-        uses: azure/login@v1
-        with:
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
-          
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          initiatives/Create_private_endpoint_resources_from_multiple_groupIds._3944aba8d1dd46f4ab843672/**
