@@ -52,6 +52,7 @@ jobs:
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
+        mode: _complete_
         paths: |
           0_5/policies/DINE_create_private_endpoint_resource(A_records)_from_groupId(blob)_bcb9fc7d-cb1f-464b-a6ce-d671a6583290/**
           0_5/policies/DINE_create_private_endpoint_resource(A_record)_from_groupId(redisCache)_72ee238d-71c9-449b-b299-3680e9ffabd2/**
