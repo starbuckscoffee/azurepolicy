@@ -1,0 +1,436 @@
+{
+ "properties": {
+  "displayName": "Create private endpoint resources from multiple groupIds.",
+  "policyType": "Custom",
+  "description": "Group of policies that assign A records from groupId in multiple private endpoints \n[Policy Category]  PrivateDnsZoneGroupId",
+  "metadata": {
+   "category": "PrivateDnsZoneGroupId",
+   "version": "0.5",
+   "parameterScopes": {
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Strage from groupId(Table)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Storage from groupId(Queue)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Storage from groupId(File)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Storage from groupId(Web)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55",
+    "privateDnsZoneId : DINE create private endpoint resource(A records) for Storage from groupId(Dfs)_1": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55"
+   },
+   "createdBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "createdOn": "2023-01-06T09:37:32.6578218Z",
+   "updatedBy": "eb108bec-3708-4843-9a2c-8db4b8d655f2",
+   "updatedOn": "2023-01-06T15:05:05.7627462Z",
+   "gitHubPolicy": {
+    "digest": "64f8962b929e2cb8486d52ca2a0f2c232a0bce36",
+    "repoName": "starbuckscoffee/azurepolicy",
+    "commitSha": "96757acf7654285bf9cbce5074b9446d3739550f",
+    "runUrl": "https://github.com/starbuckscoffee/azurepolicy/actions/runs/3856215651",
+    "filepath": "0_5/initiatives/Create_private_endpoint_resources_from_multiple_groupIds._3944aba8d1dd46f4ab843672"
+   }
+  },
+  "parameters": {
+   "IoTDPS": {
+    "type": "string",
+    "metadata": {
+     "displayName": "IoT DPS",
+     "description": "private DNS zone for IoT DPS",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azure-devices-provisioning.net"
+   },
+   "IoTHub": {
+    "type": "string",
+    "metadata": {
+     "displayName": "IoT Hub",
+     "description": "private DNS zone for IoT Hub",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azure-devices.net"
+   },
+   "ACR": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Azure Contaier Registry",
+     "description": "private DNS zone for Azure Container Registry",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azurecr.io"
+   },
+   "Blob": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Blob Storage",
+     "description": "private DNS zone for Blob",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.blob.core.windows.net"
+   },
+   "RedisCache": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Redis Cache",
+     "description": "private DNS zone for Azure Cache Redis",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.redis.cache.windows.net"
+   },
+   "EventHub": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Event Hubs",
+     "description": "private DNS zone for Event Hubs",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.servicebus.windows.net"
+   },
+   "EventGridTopic": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Event Grid Topic",
+     "description": "private DNS zone for Event Grid Custom Topic",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.eventgrid.azure.net"
+   },
+   "ADX": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Azure Data Explorer",
+     "description": "private DNS Zone for Azure Data Explorer",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.japaneast.kusto.windows.net"
+   },
+   "IoTCentral": {
+    "type": "string",
+    "metadata": {
+     "displayName": "IoT Central (IotApps)",
+     "description": "private DNS zone for IoT Central (groupId=IotApps)",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azureiotcentral.com"
+   },
+   "ADT": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Azure Degital Twin",
+     "description": "private DNS zone for Azure Digital Twin (groupId=API)",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.digitaltwins.azure.net"
+   },
+   "CosmosDbNoSQL": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB NoSQL",
+     "description": "private DNS zone for cosmosDB (NoSQL) \ngroupId == SQL",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.documents.azure.com"
+   },
+   "CosmosDbMongo": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB MongoDB",
+     "description": "private DNS zone for CosmosDB (MongoDB)\ngroupId == MongoDB",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.mongo.cosmos.azure.com"
+   },
+   "CosmosDbCassandra": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Cassandra",
+     "description": "private DNS zone for Cosmos DB Cassandra",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.cassandra.cosmos.azure.com"
+   },
+   "CosmosDbGremlin": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Gremlin",
+     "description": "private DNS zone for Cosmos DB Gremlin",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.gremlin.cosmos.azure.com"
+   },
+   "CosmosDbTable": {
+    "type": "string",
+    "metadata": {
+     "displayName": "CosmosDB Table",
+     "description": "private DNS zone for Cosmos DB Table",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.cosmos.azure.com"
+   },
+   "KeyVault": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Key Vault",
+     "description": "private DNS zone for Azure Key Vaults",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.vaultcore.azure.net"
+   },
+   "Table": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Table Storage",
+     "description": "private DNS zone for Table Storage",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.core.windows.net"
+   },
+   "Queue": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Queue Storage",
+     "description": "private DNS zone for Queue Storage",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.queue.core.windows.net"
+   },
+   "File": {
+    "type": "string",
+    "metadata": {
+     "displayName": "File Storage",
+     "description": "private DNS zone for File Storage",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.file.core.windows.net"
+   },
+   "Web": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Web Storage",
+     "description": "Private DNS zone for Web Storage",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.web.core.windows.net"
+   },
+   "Dfs": {
+    "type": "string",
+    "metadata": {
+     "displayName": "Dfs Storage",
+     "description": "private DNS zone for Dfs Stgorage",
+     "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.dfs.core.windows.net"
+   }
+  },
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(blob)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/bcb9fc7d-cb1f-464b-a6ce-d671a6583290",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('Blob')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A record) from groupId(redisCache)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/72ee238d-71c9-449b-b299-3680e9ffabd2",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('RedisCache')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(registry)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/1847ac82-fc0a-4745-b163-670bbe009a24",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('ACR')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(iotHub)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4bf5",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('IoTHub')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(iotDps)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c00",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('IoTDPS')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for IoT Central from groupId(IoTApps)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c0b",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('IoTCentral')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for ADX from groupId(cluster)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c16",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('ADX')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for ADT from groupId(API)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56f9a",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('ADT')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Event Grid  from groupId(topic)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fb0",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('EventGridTopic')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Event Hubs from groupId(namespace)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fbb",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('EventHub')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB NoSQL from groupId(Sql)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/6fb20e56-71bc-4b04-ab75-b36dbefeda5b",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbNoSQL')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Mongo) from groupId(MongoDB)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c20",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbMongo')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Cassandra) from groupId(Cassandra)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c2b",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbCassandra')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Gremlin) from groupId(Gremlin)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c38",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbGremlin')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Table) from groupId(Table)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c43",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('CosmosDbTable')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Key Vault from groupId(vault)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b5425fa3-2f79-4d68-baca-ca90def543dc",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('KeyVault')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Strage from groupId(Table)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('Table')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Queue)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba794e",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('Queue')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(File)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7959",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('File')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Web)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7964",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('Web')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Dfs)_1",
+    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba796f",
+    "parameters": {
+     "privateDnsZoneId": {
+      "value": "[parameters('Dfs')]"
+     }
+    },
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policySetDefinitions/3944aba8d1dd46f4ab843672",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "3944aba8d1dd46f4ab843672"
+}
