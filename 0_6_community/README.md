@@ -19,12 +19,12 @@ export PolicyName="`cat  policy.json | jq -r '.name'`"
 
 -- Deploy policy using Azure CLI
 
-az policy definition create \
-  --name $PolicyName --mode Indexed \
-  --display-name $PolicyDisplayName \
-  --rules policy.rule \
-  --params policy.params \
-  --subscription "refer-to-your-subscription-name"
+>az policy definition create \\
+>  --name $PolicyName --mode Indexed \\
+>  --display-name $PolicyDisplayName \\
+>  --rules policy.rule \\
+>  --params policy.params \\
+>  --subscription "refer-to-your-subscription-name"
 
 
 -- Check if policy was created
@@ -48,7 +48,7 @@ az policy set-definition create --definitions ./policyDefinisionSet.json \
   --params ./policyDefinisionParams.json \
   --subscription "refer-to-your-subscription-name"
 
-  
+
 
 
 
