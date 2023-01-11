@@ -14,13 +14,14 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
         allow-no-subscriptions: true
     - name: Create or Update Azure Policies
-        run: |
-          pwd
-          cd 0_6_community
-          chmod 755 deployPolicies.sh
-          deployPolicies.sh
+      run: |
+        pwd
+        cd 0_6_community
+        chmod 755 deployPolicies.sh
+        deployPolicies.sh
     - name: Create or Update Azure Policy Set
-        run: |
-          pwd
-          chmod 755 deployPolicySetInitiative.sh
-          deployPolicySetInitiative.sh
+      run: |
+        pwd
+        chmod 755 deployPolicySetInitiative.sh
+        deployPolicySetInitiative.sh
+        
