@@ -3,7 +3,7 @@
 for  filename in `ls ./policies/*/policy.json -1`; do
     export PolicyCategory=`cat  $filename | jq -r '.properties.metadata.category'`
     echo $PolicyCategory
-    export PolicyDisplayName="`cat $filename | jq -r '.properties.displayName'`"
+    export PolicyDisplayName="\"`cat $filename | jq -r '.properties.displayName'`\""
     echo $PolicyDisplayName
     export PolicyName="`cat  $filename | jq -r '.name'`"
     echo $PolicyName
