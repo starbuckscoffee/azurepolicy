@@ -1,7 +1,7 @@
 [
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(blob)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/bcb9fc7d-cb1f-464b-a6ce-d671a6583290",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/bcb9fc7d-cb1f-464b-a6ce-d671a6583290",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('Blob')]"
@@ -11,7 +11,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A record) from groupId(redisCache)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/72ee238d-71c9-449b-b299-3680e9ffabd2",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/72ee238d-71c9-449b-b299-3680e9ffabd2",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('RedisCache')]"
@@ -21,7 +21,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(registry)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/1847ac82-fc0a-4745-b163-670bbe009a24",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/1847ac82-fc0a-4745-b163-670bbe009a24",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('ACR')]"
@@ -31,7 +31,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(iotHub)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4bf5",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4bf5",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('IoTHub')]"
@@ -41,7 +41,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) from groupId(iotDps)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c00",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c00",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('IoTDPS')]"
@@ -51,7 +51,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for IoT Central from groupId(IoTApps)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c0b",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c0b",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('IoTCentral')]"
@@ -61,7 +61,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for ADX from groupId(cluster)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c16",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c16",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('ADX')]"
@@ -71,7 +71,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for ADT from groupId(API)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56f9a",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56f9a",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('ADT')]"
@@ -81,7 +81,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Event Grid  from groupId(topic)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fb0",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fb0",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('EventGridTopic')]"
@@ -91,7 +91,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Event Hubs from groupId(namespace)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fbb",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fbb",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('EventHub')]"
@@ -101,7 +101,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB NoSQL from groupId(Sql)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/6fb20e56-71bc-4b04-ab75-b36dbefeda5b",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/6fb20e56-71bc-4b04-ab75-b36dbefeda5b",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('CosmosDbNoSQL')]"
@@ -111,7 +111,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Mongo) from groupId(MongoDB)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c20",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c20",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('CosmosDbMongo')]"
@@ -121,7 +121,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Cassandra) from groupId(Cassandra)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c2b",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c2b",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('CosmosDbCassandra')]"
@@ -131,7 +131,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Gremlin) from groupId(Gremlin)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c38",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c38",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('CosmosDbGremlin')]"
@@ -141,7 +141,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for CosmosDB(Table) from groupId(Table)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c43",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c43",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('CosmosDbTable')]"
@@ -151,7 +151,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Key Vault from groupId(vault)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b5425fa3-2f79-4d68-baca-ca90def543dc",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b5425fa3-2f79-4d68-baca-ca90def543dc",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('KeyVault')]"
@@ -161,7 +161,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Strage from groupId(Table)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('Table')]"
@@ -171,7 +171,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Queue)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba794e",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba794e",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('Queue')]"
@@ -181,7 +181,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(File)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7959",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7959",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('File')]"
@@ -191,7 +191,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Web)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7964",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7964",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('Web')]"
@@ -201,7 +201,7 @@
   },
   {
     "policyDefinitionReferenceId": "DINE create private endpoint resource(A records) for Storage from groupId(Dfs)_1",
-    "policyDefinitionId": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba796f",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba796f",
     "parameters": {
       "privateDnsZoneId": {
         "value": "[parameters('Dfs')]"
