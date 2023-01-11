@@ -17,12 +17,11 @@ jobs:
       run: |
         cd 0_6_community
         chmod 755 deployPolicies.sh
-        pwd
-        ls -al
         ./deployPolicies.sh
     - name: Create or Update Azure Policy Set
       run: |
+        cd 0_6_community
         pwd
         chmod 755 deployPolicySetInitiative.sh
-        deployPolicySetInitiative.sh
+        ./deployPolicySetInitiative.sh
 
