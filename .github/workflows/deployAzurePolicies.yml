@@ -13,8 +13,9 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
         allow-no-subscriptions: true
-    - name: Create or Update Azure Policies
+    - name: Create or Update Azure Policies 
       run: |
+        echo "Hello"
         pwd
         cd 0_6_community
         chmod 755 deployPolicies.sh
@@ -24,4 +25,4 @@ jobs:
         pwd
         chmod 755 deployPolicySetInitiative.sh
         deployPolicySetInitiative.sh
-        
+
