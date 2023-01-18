@@ -15,12 +15,12 @@ jobs:
         allow-no-subscriptions: true
     - name: Create or Update Azure Policies 
       run: |
-        cd 0_6_community
+        cd 0_7
         chmod 755 deployPolicies.sh
         ./deployPolicies.sh
     - name: Create or Update Azure Policy Set
       run: |
-        cd 0_6_community
+        cd 0_7
         pwd
         chmod 755 deployPolicySetInitiative.sh
         ./deployPolicySetInitiative.sh
