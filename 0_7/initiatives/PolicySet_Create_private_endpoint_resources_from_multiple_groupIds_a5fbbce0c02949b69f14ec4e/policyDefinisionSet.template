@@ -1,0 +1,283 @@
+[
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_Storage_groupId_blob_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/bcb9fc7d-cb1f-464b-a6ce-d671a6583290",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_Storage_groupId_blob_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_ContainerRegistry_groupId_registry_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/1847ac82-fc0a-4745-b163-670bbe009a24",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_ContainerRegistry_groupId_registry_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_DeviceProvisioningService_groupId_iotDps_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/e36bea98-09cf-48c1-822a-958f756c4c00",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_DeviceProvisioningService_groupId_iotDps_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_DigitalTwin_groupId_API_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56f9a",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_DigitalTwin_groupId_API_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_EventGrid_groupId_domain_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fa5",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_EventGrid_groupId_domain_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_EventGridCustomTopic_groupId_topic_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fb0",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_EventGridCustomTopic_groupId_topic_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_EventHubs_groupId_namespace_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/773f8c02-7b5e-4258-a556-6dfa6da56fbb",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_EventHubs_groupId_namespace_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_CosmosNoSql_groupId_Sql_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/6fb20e56-71bc-4b04-ab75-b36dbefeda5b",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_CosmosNoSql_groupId_Sql_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_CosmosMongo_groupId_MongoDB_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c20",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_CosmosMongo_groupId_MongoDB_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_CosmosCassandra_groupId_Cassandra_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c2b",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_CosmosCassandra_groupId_Cassandra_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_CosmosGremlin_groupId_Gremlin_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c38",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_CosmosGremlin_groupId_Gremlin_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_CosmosTable_groupId_Table_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/a4d2a3b0-edd0-4538-afa8-2065b2618c43",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_CosmosTable_groupId_Table_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_KeyVault_groupId_vault_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b5425fa3-2f79-4d68-baca-ca90def543dc",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_KeyVault_groupId_vault_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_StrageTable_groupId_table_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_StrageTable_groupId_table_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_StorageQueue_groupId_queue_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba794e",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_StorageQueue_groupId_queue_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_StorageFile_groupId_file_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7959",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_StorageFile_groupId_file_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_StorageWeb_groupId_web_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba7964",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_StorageWeb_groupId_web_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_StorageDfs_groupId_dfs_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/c6d6389d-bd60-41f3-82b1-cbc43fba796f",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_StorageDfs_groupId_dfs_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_SqlDatabase_groupId_sqlServer_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b4535546-438b-40f3-95d2-5db7728bf74b",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_SqlDatabase_groupId_sqlServer_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_WebPubSub_groupId_WebPubSub_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/8ab1097d-0e23-4e69-bc35-c32a9433b913",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_WebPubSub_groupId_WebPubSub_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_SignalR_groupId_SignalR_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/89cd87f9-df9f-45a9-979c-a368459e5aeb",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_SignalR_groupId_SignalR_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_DataFactory_groupId_dataFactory_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/89cd87f9-df9f-45a9-979c-a368459e5af6",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_DataFactory_groupId_dataFactory_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_RedisCache_groupId_redisCache_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/98dd8025-b5bc-41d3-8cb1-9d459a0f0398",
+    "parameters": {
+      "privateDnsZoneId": {
+        "value": "[parameters('Create_Private_Endpoint_Resource_for_RedisCache_groupId_redisCache_1')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_IoTHub_groupId_iotHub_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/b0b01621-d921-4544-87fd-d878f4930214",
+    "parameters": {
+      "privateDnsZoneId-1": {
+        "value": "[parameters('IotHub_devicenet')]"
+      },
+      "privateDnsZoneId-2": {
+        "value": "[parameters('iotHubEventHub')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_ADX_groupId_cluster_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/ffb269f4-1114-47c0-86d7-558db6c1559d",
+    "parameters": {
+      "privateDnsZoneId-1": {
+        "value": "[parameters('AdxKusto')]"
+      },
+      "privateDnsZoneId-2": {
+        "value": "[parameters('AdxBlobCore')]"
+      },
+      "privateDnsZoneId-3": {
+        "value": "[parameters('AdxQueueCore')]"
+      },
+      "privateDnsZoneId-4": {
+        "value": "[parameters('AdxTableCore')]"
+      }
+    },
+    "groupNames": []
+  },
+  {
+    "policyDefinitionReferenceId": "Create_Private_Endpoint_Resource_for_IoTCentral_groupId_iotApp_1",
+    "policyDefinitionId": "/subscriptions/__your_subscription_id__/providers/Microsoft.Authorization/policyDefinitions/ffb269f4-1114-47c0-86d7-558db6c155b1",
+    "parameters": {
+      "privateDnsZoneId-1": {
+        "value": "[parameters('IoTCentral')]"
+      },
+      "privateDnsZoneId-2": {
+        "value": "[parameters('IotCentralDeviceNet')]"
+      },
+      "privateDnsZoneId-3": {
+        "value": "[parameters('IotCentralServiceBus')]"
+      },
+      "privateDnsZoneId-4": {
+        "value": "[parameters('IotCentralDeviceProvisioning')]"
+      }
+    },
+    "groupNames": []
+  }
+]

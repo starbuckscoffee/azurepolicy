@@ -1,0 +1,266 @@
+{
+  "Create_Private_Endpoint_Resource_for_Storage_groupId_blob_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StroageBlob",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.blob.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_ContainerRegistry_groupId_registry_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "ContainerRegistry",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azurecr.io"
+  },
+  "Create_Private_Endpoint_Resource_for_DeviceProvisioningService_groupId_iotDps_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "DeviceProvisioningService",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azurecr.io"
+  },
+  "Create_Private_Endpoint_Resource_for_DigitalTwin_groupId_API_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "DigitalTwin",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.digitaltwins.azure.net"
+  },
+  "Create_Private_Endpoint_Resource_for_EventGrid_groupId_domain_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "EventGridDomain",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.eventgrid.azure.net"
+  },
+  "Create_Private_Endpoint_Resource_for_EventGridCustomTopic_groupId_topic_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "EventGridTopic",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.eventgrid.azure.net"
+  },
+  "Create_Private_Endpoint_Resource_for_EventHubs_groupId_namespace_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "EventHubs",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.servicebus.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_CosmosNoSql_groupId_Sql_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "CosmosNoSql",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.documents.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_CosmosMongo_groupId_MongoDB_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "CosmosMongo",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.mongo.cosmos.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_CosmosCassandra_groupId_Cassandra_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "CosmosCasandra",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.cassandra.cosmos.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_CosmosGremlin_groupId_Gremlin_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "CosmosGremlin",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.gremlin.cosmos.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_CosmosTable_groupId_Table_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "CosmosTable",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.cosmos.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_KeyVault_groupId_vault_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "KeyVault",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.vaultcore.azure.net"
+  },
+  "Create_Private_Endpoint_Resource_for_StrageTable_groupId_table_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StorageTable",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_StorageQueue_groupId_queue_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StorageQueue",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.queue.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_StorageFile_groupId_file_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StorageFile",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.file.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_StorageWeb_groupId_web_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StorageWeb",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.web.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_StorageDfs_groupId_dfs_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "StorageDfs",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.dfs.core.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_SqlDatabase_groupId_sqlServer_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "SqlDatabaseServer",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.database.windows.net"
+  },
+  "Create_Private_Endpoint_Resource_for_WebPubSub_groupId_WebPubSub_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "WebPubSub",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.webpubsub.azure.com"
+  },
+  "Create_Private_Endpoint_Resource_for_SignalR_groupId_SignalR_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "SignalR",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.service.signalr.net"
+  },
+  "Create_Private_Endpoint_Resource_for_DataFactory_groupId_dataFactory_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "DataFactory",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.datafactory.azure.net"
+  },
+  "Create_Private_Endpoint_Resource_for_RedisCache_groupId_redisCache_1": {
+    "type": "string",
+    "metadata": {
+      "displayName": "RedisCache",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.redis.cache.windows.net"
+  },
+  "IotHub_devicenet": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IotHubDevicenet",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azure-devices.net"
+  },
+  "iotHubEventHub": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IoTHubEventHub",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.servicebus.windows.net"
+  },
+  "AdxKusto": {
+    "type": "string",
+    "metadata": {
+      "displayName": "AdxKusto",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.japaneast.kusto.windows.net"
+  },
+  "AdxBlobCore": {
+    "type": "string",
+    "metadata": {
+      "displayName": "AdxBlobCore",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.blob.core.windows.net"
+  },
+  "AdxQueueCore": {
+    "type": "string",
+    "metadata": {
+      "displayName": "AdxQueueCore",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.queue.core.windows.net"
+  },
+  "AdxTableCore": {
+    "type": "string",
+    "metadata": {
+      "displayName": "AdxTableCore",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.table.core.windows.net"
+  },
+  "IoTCentral": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IoTCentral",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azureiotcentral.com"
+  },
+  "IotCentralDeviceNet": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IotCentralDeviceNet",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azure-devices.net"
+  },
+  "IotCentralServiceBus": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IotCentralServiceBus",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.servicebus.windows.net"
+  },
+  "IotCentralDeviceProvisioning": {
+    "type": "string",
+    "metadata": {
+      "displayName": "IotCentralDeviceProvisioning",
+      "strongType": "Microsoft.Network/privateDnsZones"
+    },
+    "defaultValue": "privatelink.azure-devices-provisioning.net"
+  }
+}
