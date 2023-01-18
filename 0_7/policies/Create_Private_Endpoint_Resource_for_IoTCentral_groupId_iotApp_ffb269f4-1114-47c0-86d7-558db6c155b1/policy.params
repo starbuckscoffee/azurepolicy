@@ -1,0 +1,34 @@
+{
+  "privateDnsZoneId-1": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-iotcentral",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-2": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-azure-device",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-3": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-servicebus",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-4": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-device-provisioning",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  }
+}

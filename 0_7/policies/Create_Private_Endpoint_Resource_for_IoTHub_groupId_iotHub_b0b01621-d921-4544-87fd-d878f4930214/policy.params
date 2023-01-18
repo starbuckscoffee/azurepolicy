@@ -1,0 +1,18 @@
+{
+  "privateDnsZoneId-1": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-devicenet",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-2": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-eventhub",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  }
+}

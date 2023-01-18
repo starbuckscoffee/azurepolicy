@@ -1,0 +1,114 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Network/privateEndpoints"
+      },
+      {
+        "count": {
+          "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+          "where": {
+            "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+            "equals": "IotApp"
+          }
+        },
+        "greaterOrEquals": 1
+      }
+    ]
+  },
+  "then": {
+    "effect": "deployIfNotExists",
+    "details": {
+      "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+      "roleDefinitionIds": [
+        "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+      ],
+      "deployment": {
+        "properties": {
+          "mode": "incremental",
+          "template": {
+            "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+            "contentVersion": "1.0.0.0",
+            "parameters": {
+              "privateDnsZoneId-1": {
+                "type": "string"
+              },
+              "privateDnsZoneId-2": {
+                "type": "string"
+              },
+              "privateDnsZoneId-3": {
+                "type": "string"
+              },
+              "privateDnsZoneId-4": {
+                "type": "string"
+              },
+              "privateEndpointName": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              }
+            },
+            "resources": [
+              {
+                "name": "[concat(parameters('privateEndpointName'), '/deployedByPolicy')]",
+                "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+                "apiVersion": "2020-03-01",
+                "location": "[parameters('location')]",
+                "properties": {
+                  "privateDnsZoneConfigs": [
+                    {
+                      "name": "azureiotcentral-privateDnsZone",
+                      "properties": {
+                        "privateDnsZoneId": "[parameters('privateDnsZoneId-1')]"
+                      }
+                    },
+                    {
+                      "name": "azure-device-privateDnsZone",
+                      "properties": {
+                        "privateDnsZoneId": "[parameters('privateDnsZoneId-2')]"
+                      }
+                    },
+                    {
+                      "name": "servicebus-privateDnsZone",
+                      "properties": {
+                        "privateDnsZoneId": "[parameters('privateDnsZoneId-3')]"
+                      }
+                    },
+                    {
+                      "name": "azure-devices-provisioning-privateDnsZone",
+                      "properties": {
+                        "privateDnsZoneId": "[parameters('privateDnsZoneId-4')]"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "privateDnsZoneId-1": {
+              "value": "[parameters('privateDnsZoneId-1')]"
+            },
+            "privateDnsZoneId-2": {
+              "value": "[parameters('privateDnsZoneId-2')]"
+            },
+            "privateDnsZoneId-3": {
+              "value": "[parameters('privateDnsZoneId-3')]"
+            },
+            "privateDnsZoneId-4": {
+              "value": "[parameters('privateDnsZoneId-4')]"
+            },
+            "privateEndpointName": {
+              "value": "[field('name')]"
+            },
+            "location": {
+              "value": "[field('location')]"
+            }
+          }
+        }
+      }
+    }
+  }
+}

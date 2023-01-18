@@ -1,0 +1,34 @@
+{
+  "privateDnsZoneId-1": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-kusto",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-2": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-blob-core",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-3": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-queue-core",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  },
+  "privateDnsZoneId-4": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId-table-core",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  }
+}

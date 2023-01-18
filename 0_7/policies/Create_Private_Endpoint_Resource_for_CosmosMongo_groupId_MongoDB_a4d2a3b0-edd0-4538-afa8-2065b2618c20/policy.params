@@ -1,0 +1,10 @@
+{
+  "privateDnsZoneId": {
+    "type": "String",
+    "metadata": {
+      "displayName": "privateDnsZoneId",
+      "description": null,
+      "strongType": "Microsoft.Network/privateDnsZones"
+    }
+  }
+}
