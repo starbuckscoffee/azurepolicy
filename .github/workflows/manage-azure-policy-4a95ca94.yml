@@ -1,0 +1,84 @@
+name: manage-azure-policy-4a95ca94
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_Storage_groupId_blob_bcb9fc7d-cb1f-464b-a6ce-d671a6583290/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_ContainerRegistry_groupId_registry_1847ac82-fc0a-4745-b163-670bbe009a24/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_DeviceProvisioningService_groupId_iotDps_e36bea98-09cf-48c1-822a-958f756c4c00/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_SqlDatabase_groupId_sqlServer_b4535546-438b-40f3-95d2-5db7728bf74b/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_StorageWeb_groupId_web_c6d6389d-bd60-41f3-82b1-cbc43fba7964/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_StorageDfs_groupId_dfs_c6d6389d-bd60-41f3-82b1-cbc43fba796f/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_StorageFile_groupId_file_c6d6389d-bd60-41f3-82b1-cbc43fba7959/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_StorageQueue_groupId_queue_c6d6389d-bd60-41f3-82b1-cbc43fba794e/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_StrageTable_groupId_table_b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_KeyVault_groupId_vault_b5425fa3-2f79-4d68-baca-ca90def543dc/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_CosmosTable_groupId_Table_a4d2a3b0-edd0-4538-afa8-2065b2618c43/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_CosmosGremlin_groupId_Gremlin_a4d2a3b0-edd0-4538-afa8-2065b2618c38/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_CosmosCassandra_groupId_Cassandra_a4d2a3b0-edd0-4538-afa8-2065b2618c2b/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_CosmosMongo_groupId_MongoDB_a4d2a3b0-edd0-4538-afa8-2065b2618c20/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_CosmosNoSql_groupId_Sql_6fb20e56-71bc-4b04-ab75-b36dbefeda5b/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_EventHubs_groupId_namespace_773f8c02-7b5e-4258-a556-6dfa6da56fbb/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_EventGridCustomTopic_groupId_topic_773f8c02-7b5e-4258-a556-6dfa6da56fb0/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_EventGrid_groupId_domain_773f8c02-7b5e-4258-a556-6dfa6da56fa5/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_DigitalTwin_groupId_API_773f8c02-7b5e-4258-a556-6dfa6da56f9a/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_IoTCentral_groupId_iotApp_ffb269f4-1114-47c0-86d7-558db6c155b1/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_ADX_groupId_cluster_ffb269f4-1114-47c0-86d7-558db6c1559d/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_IoTHub_groupId_iotHub_b0b01621-d921-4544-87fd-d878f4930214/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_RedisCache_groupId_redisCache_98dd8025-b5bc-41d3-8cb1-9d459a0f0398/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_DataFactory_groupId_dataFactory_89cd87f9-df9f-45a9-979c-a368459e5af6/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_SignalR_groupId_SignalR_89cd87f9-df9f-45a9-979c-a368459e5aeb/**'
+#      - '0_7/policies/Create_Private_Endpoint_Resource_for_WebPubSub_groupId_WebPubSub_8ab1097d-0e23-4e69-bc35-c32a9433b913/**'
+#      - '0_7/initiatives/PolicySet_Create_private_endpoint_resources_from_multiple_groupIds_a5fbbce0c02949b69f14ec4e/**'
+#      - .github/workflows/manage-azure-policy-4a95ca94.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_4a95ca94}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          0_7/policies/Create_Private_Endpoint_Resource_for_Storage_groupId_blob_bcb9fc7d-cb1f-464b-a6ce-d671a6583290/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_ContainerRegistry_groupId_registry_1847ac82-fc0a-4745-b163-670bbe009a24/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_DeviceProvisioningService_groupId_iotDps_e36bea98-09cf-48c1-822a-958f756c4c00/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_SqlDatabase_groupId_sqlServer_b4535546-438b-40f3-95d2-5db7728bf74b/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_StorageWeb_groupId_web_c6d6389d-bd60-41f3-82b1-cbc43fba7964/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_StorageDfs_groupId_dfs_c6d6389d-bd60-41f3-82b1-cbc43fba796f/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_StorageFile_groupId_file_c6d6389d-bd60-41f3-82b1-cbc43fba7959/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_StorageQueue_groupId_queue_c6d6389d-bd60-41f3-82b1-cbc43fba794e/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_StrageTable_groupId_table_b04f8dd2-7be9-4b49-ab4d-22bb6fd7f789/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_KeyVault_groupId_vault_b5425fa3-2f79-4d68-baca-ca90def543dc/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_CosmosTable_groupId_Table_a4d2a3b0-edd0-4538-afa8-2065b2618c43/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_CosmosGremlin_groupId_Gremlin_a4d2a3b0-edd0-4538-afa8-2065b2618c38/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_CosmosCassandra_groupId_Cassandra_a4d2a3b0-edd0-4538-afa8-2065b2618c2b/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_CosmosMongo_groupId_MongoDB_a4d2a3b0-edd0-4538-afa8-2065b2618c20/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_CosmosNoSql_groupId_Sql_6fb20e56-71bc-4b04-ab75-b36dbefeda5b/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_EventHubs_groupId_namespace_773f8c02-7b5e-4258-a556-6dfa6da56fbb/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_EventGridCustomTopic_groupId_topic_773f8c02-7b5e-4258-a556-6dfa6da56fb0/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_EventGrid_groupId_domain_773f8c02-7b5e-4258-a556-6dfa6da56fa5/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_DigitalTwin_groupId_API_773f8c02-7b5e-4258-a556-6dfa6da56f9a/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_IoTCentral_groupId_iotApp_ffb269f4-1114-47c0-86d7-558db6c155b1/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_ADX_groupId_cluster_ffb269f4-1114-47c0-86d7-558db6c1559d/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_IoTHub_groupId_iotHub_b0b01621-d921-4544-87fd-d878f4930214/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_RedisCache_groupId_redisCache_98dd8025-b5bc-41d3-8cb1-9d459a0f0398/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_DataFactory_groupId_dataFactory_89cd87f9-df9f-45a9-979c-a368459e5af6/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_SignalR_groupId_SignalR_89cd87f9-df9f-45a9-979c-a368459e5aeb/**
+          0_7/policies/Create_Private_Endpoint_Resource_for_WebPubSub_groupId_WebPubSub_8ab1097d-0e23-4e69-bc35-c32a9433b913/**
+          0_7/initiatives/PolicySet_Create_private_endpoint_resources_from_multiple_groupIds_a5fbbce0c02949b69f14ec4e/**

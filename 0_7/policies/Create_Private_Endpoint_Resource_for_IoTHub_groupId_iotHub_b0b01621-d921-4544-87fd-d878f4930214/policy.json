@@ -1,0 +1,125 @@
+{
+ "properties": {
+  "displayName": "Create_Private_Endpoint_Resource_for_IoTHub_groupId_iotHub",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "metadata": {
+   "category": "PrivateDnsZoneGroupId",
+   "createdBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "createdOn": "2023-01-18T01:30:16.6527677Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "privateDnsZoneId-1": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-devicenet",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   },
+   "privateDnsZoneId-2": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-eventhub",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Network/privateEndpoints"
+     },
+     {
+      "count": {
+       "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+       "where": {
+        "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+        "equals": "iotHub"
+       }
+      },
+      "greaterOrEquals": 1
+     }
+    ]
+   },
+   "then": {
+    "effect": "deployIfNotExists",
+    "details": {
+     "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+     "roleDefinitionIds": [
+      "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+     ],
+     "deployment": {
+      "properties": {
+       "mode": "incremental",
+       "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+         "privateDnsZoneId-1": {
+          "type": "string"
+         },
+         "privateDnsZoneId-2": {
+          "type": "string"
+         },
+         "privateEndpointName": {
+          "type": "string"
+         },
+         "location": {
+          "type": "string"
+         }
+        },
+        "resources": [
+         {
+          "name": "[concat(parameters('privateEndpointName'), '/deployedByPolicy')]",
+          "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+          "apiVersion": "2020-03-01",
+          "location": "[parameters('location')]",
+          "properties": {
+           "privateDnsZoneConfigs": [
+            {
+             "name": "device-net-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-1')]"
+             }
+            },
+            {
+             "name": "eventhub-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-2')]"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "parameters": {
+        "privateDnsZoneId-1": {
+         "value": "[parameters('privateDnsZoneId-1')]"
+        },
+        "privateDnsZoneId-2": {
+         "value": "[parameters('privateDnsZoneId-2')]"
+        },
+        "privateEndpointName": {
+         "value": "[field('name')]"
+        },
+        "location": {
+         "value": "[field('location')]"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/b0b01621-d921-4544-87fd-d878f4930214",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "b0b01621-d921-4544-87fd-d878f4930214"
+}

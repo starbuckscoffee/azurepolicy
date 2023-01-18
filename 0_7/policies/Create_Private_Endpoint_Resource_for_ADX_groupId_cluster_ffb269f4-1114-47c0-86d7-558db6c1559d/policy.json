@@ -1,0 +1,165 @@
+{
+ "properties": {
+  "displayName": "Create_Private_Endpoint_Resource_for_ADX_groupId_cluster",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "metadata": {
+   "category": "PrivateDnsZoneGroupId",
+   "createdBy": "a3e3cca2-170d-40e8-b490-b298da8fceba",
+   "createdOn": "2023-01-18T01:31:51.1462265Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "privateDnsZoneId-1": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-kusto",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   },
+   "privateDnsZoneId-2": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-blob-core",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   },
+   "privateDnsZoneId-3": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-queue-core",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   },
+   "privateDnsZoneId-4": {
+    "type": "String",
+    "metadata": {
+     "displayName": "privateDnsZoneId-table-core",
+     "description": null,
+     "strongType": "Microsoft.Network/privateDnsZones"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Network/privateEndpoints"
+     },
+     {
+      "count": {
+       "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+       "where": {
+        "field": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections[*].groupIds[*]",
+        "equals": "cluster"
+       }
+      },
+      "greaterOrEquals": 1
+     }
+    ]
+   },
+   "then": {
+    "effect": "deployIfNotExists",
+    "details": {
+     "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+     "roleDefinitionIds": [
+      "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+     ],
+     "deployment": {
+      "properties": {
+       "mode": "incremental",
+       "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+         "privateDnsZoneId-1": {
+          "type": "string"
+         },
+         "privateDnsZoneId-2": {
+          "type": "string"
+         },
+         "privateDnsZoneId-3": {
+          "type": "string"
+         },
+         "privateDnsZoneId-4": {
+          "type": "string"
+         },
+         "privateEndpointName": {
+          "type": "string"
+         },
+         "location": {
+          "type": "string"
+         }
+        },
+        "resources": [
+         {
+          "name": "[concat(parameters('privateEndpointName'), '/deployedByPolicy')]",
+          "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+          "apiVersion": "2020-03-01",
+          "location": "[parameters('location')]",
+          "properties": {
+           "privateDnsZoneConfigs": [
+            {
+             "name": "kusto-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-1')]"
+             }
+            },
+            {
+             "name": "blob-core-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-2')]"
+             }
+            },
+            {
+             "name": "queue-core-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-3')]"
+             }
+            },
+            {
+             "name": "table-core-privateDnsZone",
+             "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZoneId-4')]"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       "parameters": {
+        "privateDnsZoneId-1": {
+         "value": "[parameters('privateDnsZoneId-1')]"
+        },
+        "privateDnsZoneId-2": {
+         "value": "[parameters('privateDnsZoneId-2')]"
+        },
+        "privateDnsZoneId-3": {
+         "value": "[parameters('privateDnsZoneId-3')]"
+        },
+        "privateDnsZoneId-4": {
+         "value": "[parameters('privateDnsZoneId-4')]"
+        },
+        "privateEndpointName": {
+         "value": "[field('name')]"
+        },
+        "location": {
+         "value": "[field('location')]"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/d9580795-79e6-48ed-95a0-c2ae49686f55/providers/Microsoft.Authorization/policyDefinitions/ffb269f4-1114-47c0-86d7-558db6c1559d",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "ffb269f4-1114-47c0-86d7-558db6c1559d"
+}
