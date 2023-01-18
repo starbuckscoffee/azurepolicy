@@ -10,10 +10,13 @@ Filename: <storing>genPolicyRuleParams.sh</storing>
 # Memo -- how to generate policyDefinisionSet.templatem & policyDefinisionParams.json
 
 > cd initiatives/PolicySet_Create_private_endpoint_resources_from_multiple_groupIds_a5fbbce0c02949b69f14ec4e
+>
 > cat policyset.json | jq -r 'properties.policyDefinitions' | sed s/d9580795-79e6-48ed-95a0-c2ae49686f55/__your_subscription_id__/g > policyDefinisionSet.template
+>
 > cat policyset.json | jq -r '.properties.parameters'  > policyDefinisionParams.json
+>
 > cd ../../
-
+>
 # How to Deploy Azure Policy using Azure CLI
   
 -- List Environments (Category, DisplayName, PolicyName)
