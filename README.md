@@ -1,24 +1,61 @@
-# azurepolicy examples
+# GitHub Action Flow Script
 
-- Private Link and DNS integration at scale Blob
-- Private Link and DNS integration at scale Redis Cache
-- Private Link and DNS integration at scale IoT Hub
-- Private Link and DNS integration at scale IoT DPS
-- Private Link and DNS integration at scale Azure Container Registry
-- Private Link and DNS integration at scale Event Hubs
-- Private Link and DNS integration at scale Event Grid Custom Topic
-- Private Link and DNS integration at scale Azure Data Explorer
-- Private Link and DNS integration at scale IoT Central
-- Private Link and DNS integration at scale Azure Digital Twin
-- Private Link and DNS integration at scale CosmosDB    (NoSQL, MongoDB, Cassandra, Gremlin, Table)
-- Private Link and DNS integration at scale Key Vaults
-- 
+```
+on: [workflow_dispatch]
+
+name: CreatePolicyDefinitionSet
+
+jobs:
+  deploy-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies 
+      run: |
+        cd 0_6_community
+        chmod 755 deployPolicies.sh
+        ./deployPolicies.sh
+    - name: Create or Update Azure Policy Set
+      run: |
+        cd 0_6_community
+        pwd
+        chmod 755 deployPolicySetInitiative.sh
+        ./deployPolicySetInitiative.sh
+```
+
+
+# List of azure policy initiative rule set
+
+-  Blob
+-  Redis Cache
+-  IoT Hub
+-  IoT Device Provisioning Service
+-  Container Registry
+-  Event Hubs & Service Bus
+-  Event Grid 
+-  Azure Data Explorer
+-  IoT Central
+-  Azure Digital Twin
+-  CosmosDB    (NoSQL, MongoDB, Cassandra, Gremlin, Table)
+-  Key Vaults
+-  Azure Data Factory
+-  Web PubSub
+-  SignalR
+-  SQL Database
+
+
 Not Included in Initiative
-- Private Link and DNS integration at scale AKS
-- Private Link and DNS integration at scale Redis Cache Enterprise
-- Private Link and DNS integration at scale Event Grid Domain
--  
+-  AKS
+-  App Service Environment
+-  Static Web Apps
+-  App Service
+-  mysql Single Server
 
-Additional Work (TBD)
 
 
