@@ -7,7 +7,7 @@ Filename: <storing>genPolicyRuleParams.sh</storing>
 
   Run the script at this directory if you want to run the script again
 
-# Memo -- how to generate policyDefinisionSet.templatem & policyDefinisionParams.json
+# Memo -- how to generate policyDefinisionSet.template & policyDefinisionParams.json
 
 > cd initiatives/PolicySet_Create_private_endpoint_resources_from_multiple_groupIds_a5fbbce0c02949b69f14ec4e
 >
